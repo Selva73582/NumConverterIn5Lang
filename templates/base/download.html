@@ -1,0 +1,21 @@
+<!-- mainapp/templates/base/download.html -->
+
+{% extends 'base/base.html' %}
+{% block body %}
+
+<div class="container">
+    <h1>Download and Play Audio</h1>
+
+    <audio controls>
+        <source src="{% url 'play_sound' file_name %}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <br>
+
+    <a href="{% url 'download_sound' file_name %}" download>
+        <button>Download Audio</button>
+    </a>
+</div>
+
+{% endblock body %}

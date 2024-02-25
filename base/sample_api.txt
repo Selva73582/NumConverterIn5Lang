@@ -1,0 +1,14 @@
+def gemini(list):
+    content="i have created the social media platform were users can enter their skills , one of the user has given skills as"+str(list)+"so i need to recommaned him a good new skills,you need to give skills according to his sector of learning, so please give me a new skill that user needs like this strictly ['skill1','skill2','skill3']"
+    import google.generativeai as genai
+    import os
+    os.environ['GOOGLE_API_KEY']='AIzaSyBlyUe_82tAOYTqHwaohgEx9hiMLEyFbKo'
+    genai.configure(api_key='AIzaSyBlyUe_82tAOYTqHwaohgEx9hiMLEyFbKo')
+    genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
+    model = genai.GenerativeModel('gemini-pro')
+    response = model.generate_content(content)
+    #print(response.text)
+    return response.text
+
+
+my api =>   AIzaSyB2hRDTNDmqDGe0FXZOeGdoLTsl4foLa4M
